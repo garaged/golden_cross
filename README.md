@@ -8,6 +8,8 @@ It keeps the original workflow idea intact:
 - list golden/death cross events
 - optionally plot the result
 
+![Example notebook usage](./examples/img/notebook_example.png)
+
 ## Install
 
 ```bash
