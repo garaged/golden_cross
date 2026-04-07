@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "golden-cross"
+version = "0.1.0"
+description = "Cached OHLC ingestion and moving-average crossover analysis extracted from a notebook"
+readme = "README.md"
+requires-python = ">=3.11"
+authors = [
+  { name = "OpenAI" }
+]
+dependencies = [
+  "matplotlib>=3.8",
+  "pandas>=2.2",
+  "yfinance>=0.2.54"
+]
+
+[project.optional-dependencies]
+parquet = ["pyarrow>=16"]
+dev = [
+  "pytest>=8",
+  "pyarrow>=16"
+]
+
+[project.scripts]
+golden-cross = "golden_cross.cli:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
